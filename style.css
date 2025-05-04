@@ -1,0 +1,61 @@
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .arabic {
+            font-family: 'Amiri', serif;
+        }
+        .hero-pattern {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjYiPgo8cmVjdCB3aWR0aD0iNiIgaGVpZ2h0PSI2IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDZMNiAwWk02IDZMMCAwWiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiNlZGU5ZTkiPjwvcGF0aD4KPC9zdmc+');
+        }
+        .islamic-pattern {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmFmOWVmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDQwSDEwMFY2MEgweiIgZmlsbD0iI2UzZDFmNSI+PC9wYXRoPgo8cGF0aCBkPSJNNDAgMEg2MFYxMDBINHoiIGZpbGw9IiNlM2QxZjUiPjwvcGF0aD4KPC9zdmc+');
+        }
+        .prayer-time {
+            transition: all 0.3s ease;
+        }
+        .prayer-time.active {
+            background-color: #ED8936;
+            color: white;
+            transform: scale(1.05);
+        }
+        .nav-link:hover {
+            color: #ED8936;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+            background: linear-gradient(90deg, #ED8936, #38A169);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ED8936;
+            transition: width 0.3s;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #ED8936, #38A169);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(90deg, #ED8936, #38A169);
+        }
+        .details-section {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+          }
+      
+          .text-primary {
+            color: #007bff;
+            cursor: pointer;
+          }
+      
+          .text-primary:hover {
+            text-decoration: underline;
+          }

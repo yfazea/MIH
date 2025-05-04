@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huntington Muslim Community | Islam in West Virginia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ED8936', // Orange
+                        secondary: '#38A169', // Green
+                        dark: '#2D3748',
+                        light: '#F7FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body class="bg-gray-50">
+    <!-- Announcement Banner -->
+    <div class="gradient-bg text-white text-center py-2 px-4">
+        <p class="text-sm md:text-base">Join us for Jumu'ah prayer every Friday at 1:30 PM</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white mr-3">
+                    <i class="fas fa-mosque text-2xl"></i>
+                </div>
+                <a href="#" class="text-xl font-bold text-dark">Huntington <span class="gradient-text">Muslim Community</span></a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-700 font-medium">About Islam</a>
+                <a href="#mosque" class="nav-link text-gray-700 font-medium">Mosque Info</a>
+                <a href="#events" class="nav-link text-gray-700 font-medium">Events</a>
+                <a href="#resources" class="nav-link text-gray-700 font-medium">Resources</a>
+                <a href="#outreach" class="nav-link text-gray-700 font-medium">Outreach</a>
+            </div>
+            
+            <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white py-2 px-4 shadow-lg" id="mobile-menu">
+            <a href="#about" class="block py-2 text-gray-700 font-medium">About Islam</a>
+            <a href="#mosque" class="block py-2 text-gray-700 font-medium">Mosque Info</a>
+            <a href="#events" class="block py-2 text-gray-700 font-medium">Events</a>
+            <a href="#resources" class="block py-2 text-gray-700 font-medium">Resources</a>
+            <a href="#outreach" class="block py-2 text-gray-700 font-medium">Outreach</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-pattern py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">
+                    Welcome to the <span class="gradient-text">Muslim Community</span> of Huntington
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    A place of worship, learning, and community for Muslims in West Virginia. 
+                    We welcome people of all faiths to learn about Islam and join us in building bridges of understanding.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#mosque" class="gradient-bg hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                        Visit Our Mosque
+                    </a>
+                    <a href="#about" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg border border-primary text-center transition duration-300">
+                        Learn About Islam
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -inset-4 bg-orange-100 rounded-2xl transform rotate-2 opacity-70"></div>
+                    <div class="relative bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold text-dark mb-4">Today's Prayer Times</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6" id="prayer-times">
+                            <!-- Filled by JavaScript -->
+                        </div>
+                        <div class="text-center">
+                            <p class="text-gray-600 mb-2">"Establish prayer for My remembrance."</p>
+                            <p class="arabic text-lg mb-4" dir="rtl">وَأَقِمِ ٱلصَّلَوٰةَ لِذِكْرِى</p>
+                            <p class="text-sm text-gray-500">Quran 20:14</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Islam Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-4">About Islam</h2>
+                <div class="w-20 h-1 gradient-bg mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-primary mb-4">
+                        <i class="fas fa-star-and-crescent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Basic Beliefs</h3>
+                    <p class="text-gray-600 mb-4">
+                        Muslims believe in one God (Allah), the angels, the revealed books, the prophets, the Day of Judgment, and divine decree.
+                    </p>
+                    <p class="text-gray-600">
+                        The testimony of faith (Shahada) states: "There is no god but Allah, and Muhammad is the messenger of Allah."
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-secondary mb-4">
+                        <i class="fas fa-mountain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Five Pillars of Islam</h3>
+                    <ol class="list-decimal list-inside text-gray-600 space-y-2">
+                        <li>Shahada (Declaration of Faith)</li>
+                        <li>Salah (Prayer five times daily)</li>
+                        <li>Zakat (Charity to the needy)</li>
+                        <li>Sawm (Fasting in Ramadan)</li>
+                        <li>Hajj (Pilgrimage to Mecca)</li>
+                    </ol>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-primary mb-4">
+                        <i class="fas fa-history text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">History of Islam</h3>
+                    <p class="text-gray-600 mb-4">
+                        Islam began in 7th century Arabia with the revelation of the Quran to Prophet Muhammad (peace be upon him).
+                    </p>
+                    <p class="text-gray-600">
+                        Today, Islam is the world's second-largest religion with over 1.8 billion followers from diverse cultures and backgrounds.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block gradient-bg hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Learn More About Islam
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mosque Information Section -->
+    <section id="mosque" class="py-16 islamic-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-4">Our Mosque</h2>
+                <div class="w-20 h-1 gradient-bg mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h3 class="text-xl font-bold text-dark mb-4">Islamic Center of Huntington</h3>
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <p class="text-gray-600">123 Peace Avenue, Huntington, WV 25701</p>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-phone text-primary mt-1 mr-3"></i>
+                            <p class="text-gray-600">(304) 555-6789</p>
+                        </div>
+                        <div class="flex items-start mb-6">
+                            <i class="fas fa-envelope text-primary mt-1 mr-3"></i>
+                            <p class="text-gray-600">info@huntingtonmuslims.org</p>
+                        </div>
+                        <a href="#" class="inline-block gradient-bg hover:opacity-90 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Get Directions
+                        </a>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold text-dark mb-4">Regular Services</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center border-b pb-2">
+                                <span class="font-medium text-gray-700">Daily Prayers</span>
+                                <span class="text-gray-600">See prayer times</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b pb-2">
+                                <span class="font-medium text-gray-700">Friday Prayer (Jumu'ah)</span>
+                                <span class="text-gray-600">1:30 PM</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b pb-2">
+                                <span class="font-medium text-gray-700">Sunday School</span>
+                                <span class="text-gray-600">10 AM - 12 PM</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b pb-2">
+                                <span class="font-medium text-gray-700">Quran Classes</span>
+                                <span class="text-gray-600">Weekdays 4-6 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                        <h3 class="text-xl font-bold text-dark mb-4">Weekly Prayer Times</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                                <thead class="gradient-bg text-white">
+                                    <tr>
+                                        <th class="py-3 px-4 text-left">Prayer</th>
+                                        <th class="py-3 px-4 text-left">Time</th>
+                                        <th class="py-3 px-4 text-left">Iqamah</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="py-3 px-4 font-medium">Fajr</td>
+                                        <td class="py-3 px-4">5:45 AM</td>
+                                        <td class="py-3 px-4">6:00 AM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4 font-medium">Dhuhr</td>
+                                        <td class="py-3 px-4">1:30 PM</td>
+                                        <td class="py-3 px-4">1:45 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4 font-medium">Asr</td>
+                                        <td class="py-3 px-4">4:30 PM</td>
+                                        <td class="py-3 px-4">4:45 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4 font-medium">Maghrib</td>
+                                        <td class="py-3 px-4">Sunset</td>
+                                        <td class="py-3 px-4">5 min after</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4 font-medium">Isha</td>
+                                        <td class="py-3 px-4">8:45 PM</td>
+                                        <td class="py-3 px-4">9:00 PM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-500">
+                            <p>Note: Prayer times change throughout the year. Please check our monthly calendar for updates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-4">Upcoming Events</h2>
+                <div class="w-20 h-1 gradient-bg mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+                    <div class="h-40 gradient-bg flex items-center justify-center text-white">
+                        <i class="fas fa-calendar-alt text-6xl opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-primary mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>March 10, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Ramadan Begins</h3>
+                        <p class="text-gray-600 mb-4">
+                            Join us for the first Taraweeh prayer of Ramadan at 8:30 PM. Community Iftar will be served daily at sunset.
+                        </p>
+                        <a href="#" class="text-primary font-medium hover:underline">More Details</a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+                    <div class="h-40 bg-secondary flex items-center justify-center text-white">
+                        <i class="fas fa-utensils text-6xl opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-secondary mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>March 15, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Interfaith Iftar</h3>
+                        <p class="text-gray-600 mb-4">
+                            Open to all community members. Learn about Ramadan traditions and share a meal with your Muslim neighbors.
+                        </p>
+                        <a href="#" class="text-secondary font-medium hover:underline">RSVP Required</a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+                    <div class="h-40 bg-primary flex items-center justify-center text-white">
+                        <i class="fas fa-star text-6xl opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-primary mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>April 9, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Eid al-Fitr Celebration</h3>
+                        <p class="text-gray-600 mb-4">
+                            Community Eid prayer at 8:00 AM followed by festivities, food, and fun activities for all ages.
+                        </p>
+                        <a href="#" class="text-primary font-medium hover:underline">Event Schedule</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block gradient-bg hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    View All Events
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-4">Resources</h2>
+                <div class="w-20 h-1 gradient-bg mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-primary mb-4">
+                        <i class="fas fa-book text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-3">Recommended Books</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• The Quran (English Translation)</li>
+                        <li>• Muhammad: His Life Based on the Earliest Sources</li>
+                        <li>• The Sealed Nectar (Biography of Prophet Muhammad)</li>
+                        <li>• Purification of the Heart</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-secondary mb-4">
+                        <i class="fas fa-video text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-3">Video Resources</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• The Life of Prophet Muhammad (PBUH)</li>
+                        <li>• What is Islam? (Introductory Series)</li>
+                        <li>• The Five Pillars Explained</li>
+                        <li>• Muslim Contributions to Science</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-primary mb-4">
+                        <i class="fas fa-question-circle text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-3">FAQs</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• What do Muslims believe?</li>
+                        <li>• Why do Muslim women wear hijab?</li>
+                        <li>• What is halal food?</li>
+                        <li>• How can I visit the mosque?</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-secondary mb-4">
+                        <i class="fas fa-download text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-3">Downloads</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Prayer Times Calendar</li>
+                        <li>• Ramadan Guide</li>
+                        <li>• Mosque Visitor Guide</li>
+                        <li>• Islamic Glossary</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outreach Section -->
+    <section id="outreach" class="py-16 bg-secondary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Community Outreach</h2>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Interfaith Programs</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-700 rounded-full p-3 mr-4">
+                                <i class="fas fa-hands-helping text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Mosque Open House</h4>
+                                <p class="text-green-100">
+                                    Monthly tours and Q&A sessions for schools, churches, and community groups to learn about Islam and Muslim practices.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-700 rounded-full p-3 mr-4">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Interfaith Dialogues</h4>
+                                <p class="text-green-100">
+                                    Regular panel discussions with leaders from different faith traditions to promote mutual understanding.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Volunteer Opportunities</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-700 rounded-full p-3 mr-4">
+                                <i class="fas fa-utensils text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Community Kitchen</h4>
+                                <p class="text-green-100">
+                                    Help prepare and serve meals to the homeless every Saturday morning. Open to volunteers of all faiths.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-700 rounded-full p-3 mr-4">
+                                <i class="fas fa-book-reader text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Tutoring Program</h4>
+                                <p class="text-green-100">
+                                    Volunteer to tutor local students in math, science, and reading at our weekend learning center.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block bg-white hover:bg-gray-100 text-secondary font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Get Involved
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+                <h3 class="text-2xl font-bold text-dark mb-2">Stay Connected</h3>
+                <p class="text-gray-600 mb-6">Subscribe to our newsletter for updates on events, prayer times, and community news.</p>
+                <form class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <input type="email" placeholder="Your email address" class="flex-grow max-w-md px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button type="submit" class="gradient-bg hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Huntington Muslim Community</h3>
+                    <p class="text-gray-400">
+                        Serving the Muslim community in Huntington, WV and promoting interfaith understanding in the Tri-State area.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Prayer Times</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events Calendar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Donate</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Peace Avenue, Huntington, WV 25701</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3"></i>
+                            <span>(304) 555-6789</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <span>info@huntingtonmuslims.org</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-secondary transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2024 Huntington Muslim Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+       
+    </script>
+</body>
+</html>
